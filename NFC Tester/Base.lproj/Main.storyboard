@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NFC_Tester" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +19,82 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzi-WY-5BP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ia-ua-Qfn">
+                                <rect key="frame" x="60" y="623" width="255" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3Of-di-hdn">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="34"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Add Marker"/>
+                                <connections>
+                                    <action selector="didTapAddMarker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O8u-hh-luN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtO-Fg-Kdh">
+                                <rect key="frame" x="315" y="623" width="60" height="44"/>
+                                <color key="backgroundColor" red="0.92771947383880615" green="0.25380456447601318" blue="0.14122144877910614" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="2CH-Zg-64S"/>
+                                    <constraint firstAttribute="height" constant="44" id="swd-Re-9FY">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="34"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="didTapClearLog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MZG-Sy-Bxv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmy-mM-uSH">
+                                <rect key="frame" x="0.0" y="623" width="60" height="44"/>
+                                <color key="backgroundColor" red="0.388160646" green="0.78614795209999999" blue="0.33724781869999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="a6U-tg-sRH">
+                                        <variation key="heightClass=compact-widthClass=compact" constant="34"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="60" id="oWZ-AX-NJJ"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="New"/>
+                                <connections>
+                                    <action selector="didTapNewSession:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rXP-LU-eyk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xzi-WY-5BP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="89X-gw-r1j"/>
+                            <constraint firstItem="2ia-ua-Qfn" firstAttribute="top" secondItem="xzi-WY-5BP" secondAttribute="bottom" id="BWm-0Y-Z4s"/>
+                            <constraint firstItem="AtO-Fg-Kdh" firstAttribute="leading" secondItem="2ia-ua-Qfn" secondAttribute="trailing" id="Cdh-66-bTn"/>
+                            <constraint firstItem="Pmy-mM-uSH" firstAttribute="top" secondItem="xzi-WY-5BP" secondAttribute="bottom" id="E3l-fC-ltZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AtO-Fg-Kdh" secondAttribute="bottom" id="Od1-Cw-1MX"/>
+                            <constraint firstItem="xzi-WY-5BP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SVi-gb-DKk"/>
+                            <constraint firstItem="Pmy-mM-uSH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tl1-tW-3FL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pmy-mM-uSH" secondAttribute="bottom" id="UZD-ft-CCp"/>
+                            <constraint firstAttribute="trailing" secondItem="AtO-Fg-Kdh" secondAttribute="trailing" id="fSs-Eo-GdG"/>
+                            <constraint firstItem="AtO-Fg-Kdh" firstAttribute="top" secondItem="xzi-WY-5BP" secondAttribute="bottom" id="jYq-I4-jgM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2ia-ua-Qfn" secondAttribute="bottom" id="sUL-hU-q19"/>
+                            <constraint firstItem="2ia-ua-Qfn" firstAttribute="leading" secondItem="Pmy-mM-uSH" secondAttribute="trailing" id="siM-5s-Chy"/>
+                            <constraint firstAttribute="trailing" secondItem="xzi-WY-5BP" secondAttribute="trailing" id="urX-1l-lot"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="xzi-WY-5BP" id="Qlk-wJ-CDK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
