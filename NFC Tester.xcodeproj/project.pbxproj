@@ -110,6 +110,7 @@
 				TargetAttributes = {
 					151A4A2A1EE74D6200DC63C2 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1100;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.DataProtection = {
@@ -302,7 +303,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a3304a01-49fb-4b7e-a181-70cea8442752";
 				PROVISIONING_PROFILE_SPECIFIER = "NFC Tester Development";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -319,7 +320,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a3304a01-49fb-4b7e-a181-70cea8442752";
 				PROVISIONING_PROFILE_SPECIFIER = "NFC Tester Development";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

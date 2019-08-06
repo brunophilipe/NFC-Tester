@@ -41,18 +41,18 @@ class ViewController: UIViewController
 		}
 	}
 
-	private lazy var titleMessageAttributes: [NSAttributedStringKey: NSObject] =
+	private lazy var titleMessageAttributes: [NSAttributedString.Key: NSObject] =
 	{
 		return [
-			NSAttributedStringKey.font: UIFont(name: "Menlo-Bold", size: 12.0)!
-		] as [NSAttributedStringKey: NSObject]
+			NSAttributedString.Key.font: UIFont(name: "Menlo-Bold", size: 12.0)!
+		] as [NSAttributedString.Key: NSObject]
 	}()
 
-	private lazy var bodyMessageAttributes: [NSAttributedStringKey: NSObject] =
+	private lazy var bodyMessageAttributes: [NSAttributedString.Key: NSObject] =
 	{
 		return [
-			NSAttributedStringKey.font: UIFont(name: "Menlo", size: 12.0)!
-			] as [NSAttributedStringKey: NSObject]
+			NSAttributedString.Key.font: UIFont(name: "Menlo", size: 12.0)!
+			] as [NSAttributedString.Key: NSObject]
 	}()
 
 	private lazy var logDateFormatter: DateFormatter =
