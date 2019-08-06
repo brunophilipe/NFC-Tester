@@ -41,19 +41,30 @@ class ViewController: UIViewController
 		}
 	}
 
+	private lazy var foregroundColor: UIColor =
+		{
+			if #available(iOS 13.0, *) {
+				return .label
+			} else {
+				return .black
+			}
+		}()
+
 	private lazy var titleMessageAttributes: [NSAttributedString.Key: NSObject] =
-	{
-		return [
-			NSAttributedString.Key.font: UIFont(name: "Menlo-Bold", size: 12.0)!
-		] as [NSAttributedString.Key: NSObject]
-	}()
+		{
+			return [
+				.font: UIFont(name: "Menlo-Bold", size: 12.0)!,
+				.foregroundColor: foregroundColor
+			]
+		}()
 
 	private lazy var bodyMessageAttributes: [NSAttributedString.Key: NSObject] =
-	{
-		return [
-			NSAttributedString.Key.font: UIFont(name: "Menlo", size: 12.0)!
-			] as [NSAttributedString.Key: NSObject]
-	}()
+		{
+			return [
+				.font: UIFont(name: "Menlo", size: 12.0)!,
+				.foregroundColor: foregroundColor
+			]
+		}()
 
 	private lazy var logDateFormatter: DateFormatter =
 	{
@@ -76,8 +87,12 @@ class ViewController: UIViewController
 				let newText = self.textView.attributedText.mutableCopy() as! NSMutableAttributedString
 
 				newText.append(NSAttributedString(string: "\n"))
-				newText.append(NSAttributedString(string: "[\(title) \(self.logDateFormatter.string(from: Date()))] ", attributes: self.titleMessageAttributes))
-				newText.append(NSAttributedString(string: message, attributes: self.bodyMessageAttributes))
+
+				newText.append(NSAttributedString(string: "[\(title) \(self.logDateFormatter.string(from: Date()))] ",
+												  attributes: self.titleMessageAttributes))
+
+				newText.append(NSAttributedString(string: message,
+												  attributes: self.bodyMessageAttributes))
 
 				self.textView.attributedText = newText
 				self.textView.scrollRangeToVisible(NSMakeRange(newText.length, 0))
