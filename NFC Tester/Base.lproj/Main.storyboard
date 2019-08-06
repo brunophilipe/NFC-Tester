@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--NFC Log-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NFC_Tester" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="NFC Log" id="BYZ-38-t0r" customClass="ViewController" customModule="NFC_Tester" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -76,7 +76,13 @@
                             <constraint firstAttribute="trailing" secondItem="xzi-WY-5BP" secondAttribute="trailing" id="urX-1l-lot"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kd8-Ru-2pK"/>
+                    <navigationItem key="navigationItem" title="NFC Log" id="kd8-Ru-2pK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="MAK-yt-sdd">
+                            <connections>
+                                <action selector="share:" destination="BYZ-38-t0r" id="O4q-YL-vAg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textView" destination="xzi-WY-5BP" id="Qlk-wJ-CDK"/>
                     </connections>

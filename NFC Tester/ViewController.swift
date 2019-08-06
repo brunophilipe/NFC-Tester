@@ -102,19 +102,27 @@ class ViewController: UIViewController
 
 extension ViewController // IBActions
 {
-	@IBAction func didTapNewSession(_ sender: Any)
+	@IBAction func didTapNewSession(_ sender: Any?)
 	{
 		setLogReceiver()
 	}
 
-	@IBAction func didTapAddMarker(_ sender: Any)
+	@IBAction func didTapAddMarker(_ sender: Any?)
 	{
 		log(title: "Marker")
 	}
 
-	@IBAction func didTapClearLog(_ sender: Any)
+	@IBAction func didTapClearLog(_ sender: Any?)
 	{
 		textView.attributedText = NSAttributedString(string: "")
+	}
+
+	@IBAction func share(_ sender: Any?)
+	{
+		let shareSheet = UIActivityViewController(activityItems: [textView.text as NSString],
+												  applicationActivities: nil)
+
+		present(shareSheet, animated: true)
 	}
 }
 
